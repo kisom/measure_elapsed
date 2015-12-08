@@ -98,6 +98,10 @@ main(int argc, char *argv[])
 	}
 
 	if (!foreground) {
+		if (out == out_file_default) {
+			cerr << "Using the default output filename will almost certainly not work when daemonised.\n";
+		}
+		
 		if (-1 == daemon(0, 0)) {
 			cerr << "Failed to daemonise, aborting.\n";
 			abort();
