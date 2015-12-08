@@ -20,7 +20,7 @@ OBJS =		$(patsubst %.cc, %.o, $(wildcard *.cc))
 
 # OS-specific configuration
 ifeq ($(OS), Darwin)
-CPPFLAGS +=	-stdlib=libc++
+CPPFLAGS +=	-stdlib=libc++ -DOSX
 LDFLAGS =	-lc++
 else
 CPPFLAGS +=	-stdlib=libstdc++
